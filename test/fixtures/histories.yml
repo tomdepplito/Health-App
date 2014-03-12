@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  illness_category: MyString
+  illness_type: MyString
+  date: 2014-03-11 20:03:07
+  user_id: 1
+
+two:
+  illness_category: MyString
+  illness_type: MyString
+  date: 2014-03-11 20:03:07
+  user_id: 1
