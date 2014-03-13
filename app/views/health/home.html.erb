@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<div id="user_nav">
+    <% if user_signed_in? %>
+        Signed in as <%= current_user.email %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete%>
+    <% else %>
+        <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
+    <% end %>
+</div>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -47,7 +55,7 @@
       <div class="jumbotron">
         <h1>Welcome to your Health Profile!</h1>
         <p class="lead">This is a site where you can monitor your health and share information with your doctors.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Create a profile</a></p>
+        <p><%= link_to 'Create a profile', new_user_registration_path, class: 'btn btn-lg btn-success' %></p>
       </div>
 
       <!-- Example row of columns -->

@@ -1,4 +1,5 @@
 class HistoriesController < ApplicationController
+  before_filter :authenticate_user!
   def index
     @history = History.all
   end
@@ -8,11 +9,8 @@ class HistoriesController < ApplicationController
   end
 
   def create
-    h = History.new
-    h.allergies = params["allergies"]
-    h.immunizations = params["immunizations"]
-    h.medications = params["medications"]
-    h.infections = params[""]
+    params.permit!
+    @history = current_user.histories.create(params[:history])
   end
 
   def edit
@@ -22,5 +20,10 @@ class HistoriesController < ApplicationController
   end
 
   def show
+  end
+private
+
+  def history_params
+    params.require(:history).permit(:illness_category, :illness_type, :date, :created_at, :user_id, :updated_at)
   end
 end

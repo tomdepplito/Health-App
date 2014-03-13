@@ -1,5 +1,12 @@
-<%= form_for @history do |f| %>
-  <%= f.illness_category %>
-  <%= f.illness_type %>
-  <%= f.date %>
-<% end %>
+<h1> New Medical History </h1>
+<div class="form-inline">
+  <%= form_for @history do |f| %>
+    <%= f.label :illness_category %>
+    <%= f.text_field :illness_category %>
+    <%= f.label :illness_type %>
+    <%= f.text_field :illness_type %>
+    <%= f.label :date %>
+    <%= f.text_field :date %>
+    <%= f.submit %>
+  <% end %>
+</div>

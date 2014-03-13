@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140312010307) do
+ActiveRecord::Schema.define(version: 20140313020741) do
 
   create_table "histories", force: true do |t|
     t.string   "illness_category"
     t.string   "illness_type"
+    t.string   "string"
     t.datetime "date"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 20140312010307) do
     t.integer  "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "bio"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

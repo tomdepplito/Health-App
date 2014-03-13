@@ -1,5 +1,18 @@
 <h1>Medical History</h1>
+<table>
 
-<% @history.each do |h| %>
-  <%= h.illness_category %>
-<% end %>
+  <% @history.each do |h| %>
+    <tr><p>Illness Category</p>
+        <p>Illness Type</p>
+
+
+    <tr>
+    <td><%= h.illness_category %></td></tr>
+
+    <tr><td><%= h.illness_type %></td></tr>
+    <p>Date</p>
+    <tr><td><%= h.date %></td></tr>
+    <p>User ID</p>
+    <tr><td><%= h.user_id %></td></tr>
+  <% end %>
+
