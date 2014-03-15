@@ -1,18 +1,22 @@
-<h1>Medical History</h1>
-<table>
-
-  <% @history.each do |h| %>
-    <tr><p>Illness Category</p>
-        <p>Illness Type</p>
-
-
+<h1>Medical History for <%= current_user.first_name %> <%= current_user.last_name %></h1>
+<table class="table table-striped table-bordered table-condensed" style="width: 800px;">
+  <tr>
+    <th>Category</th>
+    <th>Type</th>
+    <th>Date</th>
+    <th>ID</th>
+  </tr>
+  <% current_user.histories.each do |h| %>
     <tr>
-    <td><%= h.illness_category %></td></tr>
-
-    <tr><td><%= h.illness_type %></td></tr>
-    <p>Date</p>
-    <tr><td><%= h.date %></td></tr>
-    <p>User ID</p>
-    <tr><td><%= h.user_id %></td></tr>
+      <td><%= h.illness_category %></td>
+      <td><%= h.illness_type %></td>
+      <td><%= h.date %></td>
+      <td><%= link_to "#{h.user_id}", history_path(h) %></td>
+    </tr>
   <% end %>
+</table>
 
+
+
+<p><%= link_to 'Create new record', new_history_path %></p>
+<p><%= link_to 'See more info' %>

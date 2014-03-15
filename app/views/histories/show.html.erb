@@ -1,2 +1,8 @@
-<h1>Histories#show</h1>
-<p>Find me in app/views/histories/show.html.erb</p>
+<h1>Profile for <%= @user.first_name %> <%= @user.last_name %> </h1>
+
+<div class="well">
+  <h2>Background Information</h2>
+  <p><%= @user.bio %></p>
+</div>
+
+<%= link_to 'Back', histories_path %>
