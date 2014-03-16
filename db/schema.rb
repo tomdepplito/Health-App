@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140315233142) do
+ActiveRecord::Schema.define(version: 20140316161311) do
 
   create_table "histories", force: true do |t|
     t.string   "illness_category"
@@ -44,13 +44,18 @@ ActiveRecord::Schema.define(version: 20140315233142) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "name"
-    t.string   "address"
-    t.integer  "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "first_name"
     t.string   "last_name"
     t.text     "bio"
+    t.date     "dob"
+    t.string   "sex"
+    t.text     "family_history"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "insurance"
+    t.text     "additional"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

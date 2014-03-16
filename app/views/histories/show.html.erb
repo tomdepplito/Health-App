@@ -2,7 +2,12 @@
 
 <div class="well">
   <h2>Background Information</h2>
+  <p>Date of Birth: <%= @user.dob %></p>
+  <p><%= @user.phone %></p>
+  <p><%= @user.address %></p>
   <p><%= @user.bio %></p>
+  <p><%= @user.family_history %></p>
+  <p><%= @user.additional %></p>
 </div>
 
 <%= link_to 'Back', histories_path %>

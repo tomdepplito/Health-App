@@ -25,6 +25,7 @@
     <th>Type</th>
     <th>Date</th>
     <th>ID</th>
+    <th>Delete</th>
   </tr>
   <% current_user.histories.each do |h| %>
     <tr>
@@ -32,6 +33,7 @@
       <td><%= h.illness_type %></td>
       <td><%= h.date %></td>
       <td><%= link_to "#{h.user_id}", history_path(h) %></td>
+      <td><%= button_to "Delete", history_path(h), method: :delete %></td>
     </tr>
   <% end %>
 </table>

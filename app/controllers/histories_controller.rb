@@ -16,7 +16,7 @@ class HistoriesController < ApplicationController
     @history = current_user.histories.new(params[:history])
     if @history.save
       flash[:success] = "Record created."
-      redirect_to histories_path
+      redirect_to new_history_path
     else
       flash[:error] = "There was a problem."
       redirect_to new_history_path
@@ -34,6 +34,12 @@ class HistoriesController < ApplicationController
   def show
     @history = History.find(params[:id])
     @user = @history.user
+  end
+
+  def destroy
+    @history = History.find(params[:id])
+    @history.destroy
+    redirect_to new_history_path
   end
 
 private
