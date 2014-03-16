@@ -1,8 +1,9 @@
 class HistoriesController < ApplicationController
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
 
   def index
    # @history = History.all
+    puts "hit index"
     @history = History.all
 
   end

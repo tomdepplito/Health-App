@@ -14,7 +14,7 @@ Health::Application.routes.draw do
   resources :histories
   resources :medicines
 
-  root :to => 'devise/sessions#new'
+  root :to => 'histories#index'
   #root :to => 'histories#home'
 end
 
