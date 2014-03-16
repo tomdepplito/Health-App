@@ -2,7 +2,9 @@ class HistoriesController < ApplicationController
   before_filter :authenticate_user!
 
   def index
+   # @history = History.all
     @history = History.all
+
   end
 
   def new

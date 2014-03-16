@@ -5,8 +5,11 @@ Health::Application.routes.draw do
   get "histories/edit"
   get "histories/update"
   get "histories/show"
-  devise_for :users, controllers: { registrations: "registrations" }
+  get "histories/home"
+  devise_for :users
   resources :histories
 
-  root :to => 'histories#show'
+  root :to => 'histories#index'
+  #root :to => 'histories#home'
 end
+

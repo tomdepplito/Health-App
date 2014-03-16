@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140313020741) do
+ActiveRecord::Schema.define(version: 20140315233142) do
 
   create_table "histories", force: true do |t|
     t.string   "illness_category"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20140313020741) do
     t.integer  "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
     t.text     "bio"
   end
 

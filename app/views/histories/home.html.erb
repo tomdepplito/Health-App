@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-<div id="user_nav">
-    <% if user_signed_in? %>
-        Signed in as <%= current_user.email %>
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete%>
-    <% else %>
-        <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
-    <% end %>
-</div>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -44,9 +36,9 @@
         <ul class="nav nav-justified">
           <!-- <li class="active"><a href="#">Home</a></li> -->
           <li><a href="#">Notifications</a></li>
-          <li><a href="histories/index">Profile</a></li>
-          <li><a href="#">Symptom Checker</a></li>
-          <li><a href="#">Contact a Doctor</a></li>
+          <li><a href="new">Profile</a></li>
+          <li><a href="http://symptoms.webmd.com/default.htm#introView">Symptom Checker</a></li>
+          <li><a href="http://www.zocdoc.com/">Contact a Doctor</a></li>
           <li><a href="#">Upload Documents</a></li>
         </ul>
       </div>
@@ -55,7 +47,11 @@
       <div class="jumbotron">
         <h1>Welcome to your Health Profile!</h1>
         <p class="lead">This is a site where you can monitor your health and share information with your doctors.</p>
-        <p><%= link_to 'Create a profile', new_user_registration_path, class: 'btn btn-lg btn-success' %></p>
+        <% if current_user %>
+          <p><%= link_to 'View Your Profile', histories_path, class: 'btn btn-lg btn-success' %></p>
+        <% else %>
+          <p><%= link_to 'Create a profile', new_user_registration_path, class: 'btn btn-lg btn-success' %></p>
+        <% end %>
       </div>
 
       <!-- Example row of columns -->
@@ -63,24 +59,23 @@
         <div class="col-lg-4">
           <h2>Intelligent Monitoring</h2>
           <p>Have "HealthProfile.com" and doctors check-in and recommend follow-ups.</p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-primary" href="http://www.zocdoc.com/" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-lg-4">
           <h2>Online Community</h2>
           <p>Share your health questions with the community. Doctors will respond.</p>
           <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-          <a href="http://symptoms.webmd.com/default.htm#introView">WebMD</a>
        </div>
         <div class="col-lg-4">
           <h2>Organize</h2>
           <p>All your medical information in one place for you and your doctor to share.</p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+          <p><a class="btn btn-primary" href="new" role="button">View details &raquo;</a></p>
         </div>
       </div>
 
       <!-- Site footer -->
       <div class="footer">
-        <p>&copy; Victor Simoes 2014</p>
+        <p>Victor Simoes 2014</p>
       </div>
 
     </div> <!-- /container -->
