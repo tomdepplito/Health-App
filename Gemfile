@@ -8,9 +8,8 @@ group :production do
   gem 'pg'
 end
 
-group :development, :test do
-  gem 'sqlite3'
-end
+gem 'sqlite3'
+
 gem 'taps'
 
 # Use SCSS for stylesheets
@@ -35,8 +34,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
-gem 'pry'
-gem 'pry-debugger'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
