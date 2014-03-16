@@ -1,5 +1,8 @@
 Health::Application.routes.draw do
 
+  get "medicines/index"
+  get "medicines/new"
+  get "medicines/create"
   get "histories/index"
   get "histories/create"
   get "histories/edit"
@@ -9,6 +12,7 @@ Health::Application.routes.draw do
   get "histories/wip"
   devise_for :users
   resources :histories
+  resources :medicines
 
   root :to => 'histories#home'
   #root :to => 'histories#home'
