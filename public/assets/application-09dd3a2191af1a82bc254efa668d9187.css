@@ -1,0 +1,46 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+#create-button {
+  margin-left: 40rem;
+}
+
+#view-button {
+  margin-left: 40rem;
+}
+
+.form-inputs{
+ text-align: center
+}
+
+.btn.btn-primary {
+  margin-top: 10px;
+}
+
+.tab {
+  margin-left: 12rem;
+}
+
+.example {
+  margin-left: 8rem;
+}
+
+.medicine {
+  margin-left: 4rem;
+}
+
+.tylenol {
+  margin-left: 9rem;
+}
+
