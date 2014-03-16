@@ -8,7 +8,7 @@ group :production do
   gem 'pg'
 end
 
-gem 'sqlite3'
+gem 'sqlite3', group: :development
 
 gem 'taps'
 
