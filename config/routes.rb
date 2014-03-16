@@ -10,7 +10,7 @@ Health::Application.routes.draw do
   #get "histories/show"
   #get "histories/home"
   #get "histories/wip"
-  #devise_for :users
+  devise_for :users
   #resources :histories
   #resources :medicines
 
