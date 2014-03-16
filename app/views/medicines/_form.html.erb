@@ -1,0 +1,14 @@
+<div class="form-inline">
+  <%= form_for Medicine.new do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :medicine_family %>
+    <%= f.text_field :medicine_family %>
+    <%= f.label :dosage %>
+    <%= f.text_field :dosage %>
+    <%= f.label :notes %>
+    <%= f.text_field :notes %>
+    <%= f.submit %>
+  <% end %>
+</div>

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :symptoms
   has_many :histories
+  has_many :medicines
 
 
 end

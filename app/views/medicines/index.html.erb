@@ -1,2 +1,28 @@
-<h1>Medicines#index</h1>
-<p>Find me in app/views/medicines/index.html.erb</p>
+<h1>Medicine Log</h1>
+<%= render 'form' %>
+<p class="medicine">eg. "Analgesic, Antibiotics" <span class="tylenol">eg. ", Tylenol, Penicillin"</span></p>
+
+<h1>Medical History for <%= current_user.first_name %> <%= current_user.last_name %></h1>
+<table class="table table-striped table-bordered table-condensed" style="width: 800px;">
+  <tr>
+    <th>Medication</th>
+    <th>Medication Family</th>
+    <th>Dosage</th>
+    <th>Notes</th>
+    <th>Delete</th>
+  </tr>
+  <% @medicine.each do |h| %>
+    <tr>
+      <td><%= h.name %></td>
+      <td><%= h.medicine_family %></td>
+      <td><%= h.dosage %></td>
+      <td><%= h.notes %></td>
+      <td><%= button_to "Delete", medicine_path(h), method: :delete, class: 'btn btn-danger' %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<p><%= link_to 'Return to Medical Record', new_history_path, class: 'btn btn-primary' %></p>
+<p><%= link_to 'Homepage', histories_home_path,class: 'btn btn-primary' %></p>
+

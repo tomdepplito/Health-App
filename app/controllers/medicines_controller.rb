@@ -13,13 +13,13 @@ class MedicinesController < ApplicationController
 
   def create
     params.permit!
-    @medicine = current_user.histories.new(params[:medicine])
+    @medicine = Medicine.new(params[:medicine])
     if @medicine.save
       flash[:success] = "Record created."
-      redirect_to new_medicine_path
+      redirect_to medicines_index_path
     else
       flash[:error] = "There was a problem."
-      redirect_to new_medicine_path
+      redirect_to medicines_index_path
     end
   end
 
